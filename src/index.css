@@ -1,13 +1,83 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* nav bar */
+.pure-menu-link {
+  color: #9b6603d8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* about me splash section */
+
+/* my work section */
+#myWork {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
+.work-img {
+  width: 100%;
+  box-shadow: 12px 12px 2px 1px rgba(47, 47, 53, 0.2);
+}
+
+/* my past work history section */
+.history-h1 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#careerHistory {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/* cards holding work history */
+.w3-card-4 {
+  margin: 10px;
+}
+.w3-container h2 {
+  color: #9b6603d8;
+  border-bottom: 1px solid #9b6603d8;
+}
+.w3-container h5 {
+  color: #9b6603d8;
+  border-top: 1px solid #9b6603d8;
+}
+.history-title {
+  color: white;
+  margin-top: 10px;
+  border-bottom: 1px solid white;
+}
+.pure-g {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* media query */
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (min-device-width: 320px) and (max-device-width: 571px) {
+  .home-menu {
+    font-size: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+  }
+  #myWork {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  #careerHistory {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 150%;
+  }
+  .footer {
+    position: relative;
+  }
+  .splash-subhead {
+    font-size: 60%;
+  }
+  .splash a {
+    font-size: 10;
+  }
+}
+
