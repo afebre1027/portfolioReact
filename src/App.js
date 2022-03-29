@@ -3,6 +3,9 @@ import About from "./components/About";
 import Nav from "./components/Nav";
 import ContactForm from "./components/Contact";
 import Portfolio from "./components/Portfolio";
+import Resume from "./components/Resume";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 import "./App.css";
 import "../src/index.css";
@@ -10,36 +13,29 @@ import "../src/index.css";
 function App() {
   const [contactSelected, setContactSelected] = useState(false);
 
-  const [categories] = useState([
-    {
-      name: "Portfolio",
-      Description: "all of my projects will go here",
-    },
-    {
-      name: "My Resume",
-      Description: "resume will be created here",
-    },
-  ]);
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  function renderPage(page) {
+    if (page === "aboutMe") {
+      return <About />;
+    } else if (page === "portfolio") {
+      return <Portfolio />;
+    } else if (page === "contactMe") {
+      return <ContactForm />;
+    } else if (page === "resume") {
+      return <Resume />;
+    }
+  }
+
+  const [currentCategory, setCurrentCategory] = useState("aboutMe");
 
   return (
     <div>
-      <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
+      <Header
         currentCategory={currentCategory}
-        contactSelected={contactSelected}
-        setContactSelected={setContactSelected}
-      ></Nav>
+        setCurrentCategory={setCurrentCategory}
+      />
       <main>
-        {!contactSelected ? (
-          <>
-            <Portfolio currentCategory={currentCategory}></Portfolio>
-            <About></About>
-          </>
-        ) : (
-          <ContactForm></ContactForm>
-        )}
+        {renderPage(currentCategory)}
+        <Footer />
       </main>
     </div>
   );
